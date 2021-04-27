@@ -14,19 +14,19 @@ function navResponsive() {
 
 
     /* Al clickear un item del menu mobile, este se cierra */
-     menuItems.forEach(function(e) {
-      
+    menuItems.forEach(function(e) {     
         e.addEventListener('click', function() {
         document.body.classList.remove('mobile-menu-active');
         })
     });
 
-     /* agrego la clase active para dar estilos a los items del menu clickeados */
-     for(let i = 0; i < menuItems.length; i++){
+    /* agrego la clase active para dar estilos a los items 
+    del menu clickeados */
+    for(let i = 0; i < menuItems.length; i++){
         menuItems[i].addEventListener('click', function () {
             let currentItem = document.querySelector('.active');
-            currentItem.classList.toggle('active');
-            this.classList.toggle('active');
+            currentItem.classList.remove('active');
+            this.classList.add('active');
         });
     }
 
